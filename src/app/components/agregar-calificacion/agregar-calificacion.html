@@ -1,8 +1,9 @@
 <div>
+    <h3>{{ modoEdicion ? 'Editar Calificación' : 'Agregar Nueva Calificación' }}</h3>
     <form [formGroup]="formularioCalif" (ngSubmit)="submit()">
         <p>
             Matricula:
-            <input type="text" formControlName="matricula">
+            <input type="text" formControlName="matricula" [readonly]="modoEdicion">
             @if (this.formularioCalif.get('matricula')?.errors?.['required'] && this.formularioCalif.dirty){
                 <p style="color: red;">Este campo no debe estar vacio</p>
             }
@@ -26,8 +27,8 @@
             Corte 3:
             <input type="number" formControlName="corte3">
         </p>
-    
-        <button type="reset">Nuevo</button>
-        <button type="submit">Guardar</button>
+
+        <button type="button" (click)="resetForm()">Nuevo</button>
+        <button type="submit">{{ modoEdicion ? 'Actualizar' : 'Guardar' }}</button>
     </form>
 </div>
