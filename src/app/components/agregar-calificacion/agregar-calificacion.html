@@ -1,0 +1,40 @@
+<div style="text-align: center;">
+    <form [formGroup]="formularioCalif" (ngSubmit)="submit()">
+        <p>
+            Matricula:
+            <input type="text" formControlName="matricula"><br>
+            @if (this.formularioCalif.get('matricula')?.errors?.['required'] && this.formularioCalif.touched){
+                <span style="color: red;"> *Este campo no debe estar vacio</span>
+            }
+
+            @if (this.formularioCalif.get('matricula')?.errors?.['pattern'] && this.formularioCalif.touched){
+                <span style="color: red;"> *Este campo no admite caracteres alfabeticos</span>
+            }
+        </p>
+        <p>
+            Nombre:
+            <input type="text" formControlName="nombre"><br>
+            @if (this.formularioCalif.get('nombre')?.errors?.['required'] && this.formularioCalif.touched){
+                <span style="color: red;"> *Este campo no debe estar vacio</span>
+            }
+
+            @if (this.formularioCalif.get('nombre')?.errors?.['pattern'] && this.formularioCalif.touched){
+                <span style="color: red;"> *Este campo no admite caracteres numericos</span>
+            }
+        </p>
+        <p>
+            Corte 1:
+            <input type="number" formControlName="corte1">
+        </p>
+        <p>
+            Corte 2:
+            <input type="number" formControlName="corte2">
+        </p>
+        <p>
+            Corte 3:
+            <input type="number" formControlName="corte3">
+        </p>
+    
+        <button type="reset">Nuevo</button> - <button type="submit">Guardar</button>
+    </form>
+</div>
