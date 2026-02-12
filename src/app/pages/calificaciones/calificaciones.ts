@@ -43,4 +43,9 @@ export class Calificaciones {
     this.indiceEdicion = this.registros.findIndex(r => r.matricula === registro.matricula);
     this.agregarCalificacionComponent.cargarDatosEdicion(registro);
   }
+
+  esNotaBaja(valor: string ): boolean {
+    const num = typeof valor === 'number' ? valor : Number(valor);
+    return !Number.isNaN(num) && num < 7;
+  }
 }

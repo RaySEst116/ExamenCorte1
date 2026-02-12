@@ -1,5 +1,5 @@
-<div >
-    <table >
+<div style="display: flex; flex-direction: column; justify-content: center;">
+    <table style="border: 1px; ">
         <th>Matricula</th>
         <th>Nombre</th>
         <th>Corte 1</th>
@@ -11,9 +11,9 @@
         <tr>
             <td> {{ registro.matricula }} </td>
             <td> {{ registro.nombre }} </td>
-            <td> {{ registro.corte1 }} </td>
-            <td> {{ registro.corte2 }} </td>
-            <td> {{ registro.corte3 }} </td>
+            <td [class.nota-baja]="esNotaBaja(registro.corte1)"> {{ registro.corte1 }} </td>
+            <td [class.nota-baja]="esNotaBaja(registro.corte2)"> {{ registro.corte2 }} </td>
+            <td [class.nota-baja]="esNotaBaja(registro.corte3)"> {{ registro.corte3 }} </td>
             <td><button (click)="edit(registro)">Seleccionar</button></td>
             <td><button (click)="delete(registro)">Eliminar</button></td>
         </tr>

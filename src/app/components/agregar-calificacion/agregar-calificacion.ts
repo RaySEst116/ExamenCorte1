@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Validators, FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Output } from '@angular/core';
 
@@ -21,12 +21,14 @@ interface Registro {
 export class AgregarCalificacion {
   formularioCalif: FormGroup;
   @Output() registro = new EventEmitter<Registro>()
+
+
   modoEdicion: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.formularioCalif = this.fb.group({
-      nombre: ['', Validators.required],
-      matricula: ['', Validators.required],
+      matricula: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      nombre: ['', [Validators.required, Validators.pattern("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$")]],
       corte1: [''],
       corte2: [''],
       corte3: ['']
