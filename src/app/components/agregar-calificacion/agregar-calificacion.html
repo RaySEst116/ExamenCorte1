@@ -3,44 +3,44 @@
         <p>
             Matricula:
             <input type="text" formControlName="matricula"><br>
-            @if (this.formularioCalif.get('matricula')?.errors?.['required'] && this.formularioCalif.touched){
+            @if (this.formularioCalif.get('matricula')?.errors?.['required'] && this.formularioCalif.get('matricula')?.touched){
                 <span style="color: red;"> *Este campo no debe estar vacio</span>
             }
 
-            @if (this.formularioCalif.get('matricula')?.errors?.['pattern'] && this.formularioCalif.touched){
+            @if (this.formularioCalif.get('matricula')?.errors?.['pattern'] && this.formularioCalif.get('matricula')?.touched){
                 <span style="color: red;"> *Este campo no admite caracteres alfabeticos</span>
             }
         </p>
         <p>
             Nombre:
             <input type="text" formControlName="nombre"><br>
-            @if (this.formularioCalif.get('nombre')?.errors?.['required'] && this.formularioCalif.touched){
+            @if (this.formularioCalif.get('nombre')?.errors?.['required'] && this.formularioCalif.get('nombre')?.touched){
                 <span style="color: red;"> *Este campo no debe estar vacio</span>
             }
 
-            @if (this.formularioCalif.get('nombre')?.errors?.['pattern'] && this.formularioCalif.touched){
+            @if (this.formularioCalif.get('nombre')?.errors?.['pattern'] && this.formularioCalif.get('nombre')?.touched){
                 <span style="color: red;"> *Este campo no admite caracteres numericos</span>
             }
         </p>
         <p>
             Corte 1:
-            <input type="number" formControlName="corte1"> <br>
-            @if (this.formularioCalif.get('corte1')?.errors?.['pattern'] && this.formularioCalif.touched) {
-                <span style="color: red;"> *Ingrese una calif. valida</span>
+            <input type="number" formControlName="corte1"><br>
+            @if (this.formularioCalif.get('corte1')?.errors?.['pattern'] && this.formularioCalif.get('corte1')?.touched) {
+                <span style="color: red;"> *Ingresa una calif valida</span>
             }
         </p>
         <p>
             Corte 2:
-            <input type="number" formControlName="corte2"><br>
-            @if (this.formularioCalif.get('corte2')?.errors?.['pattern'] && this.formularioCalif.touched) {
-                <span style="color: red;"> *Ingrese una calif. valida</span>
+            <input type="number" formControlName="corte2"> <br>
+            @if (this.formularioCalif.get('corte2')?.errors?.['pattern'] && this.formularioCalif.get('corte2')?.touched) {
+                <span style="color: red;"> *Ingresa una calif valida</span>
             }
         </p>
         <p>
             Corte 3:
-            <input type="number" formControlName="corte3"><br>
-            @if (this.formularioCalif.get('corte3')?.errors?.['pattern'] && this.formularioCalif.touched) {
-                <span style="color: red;"> *Ingrese una calif. valida</span>
+            <input type="number" formControlName="corte3"> <br>
+            @if (this.formularioCalif.get('corte3')?.errors?.['pattern'] && this.formularioCalif.get('corte3')?.touched) {
+                <span style="color: red;"> *Ingresa una calif valida </span>
             }
         </p>
 

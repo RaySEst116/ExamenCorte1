@@ -29,9 +29,9 @@ export class AgregarCalificacion {
     this.formularioCalif = this.fb.group({
       matricula: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       nombre: ['', [Validators.required, Validators.pattern("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$")]],
-      corte1: ['', [Validators.pattern("/^(10|[0-9])$/")]],
-      corte2: ['', [Validators.pattern("/^(10|[0-9])$/")]],
-      corte3: ['']
+      corte1: ['', Validators.pattern("^([0-9]|10)$")],
+      corte2: ['', Validators.pattern("^([0-9]|10)$")],
+      corte3: ['', Validators.pattern("^([0-9]|10)$")]
     });
   }
 
