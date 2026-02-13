@@ -1,30 +1,13 @@
-import { Component, signal, Input } from '@angular/core';
-import { AgregarCalificacion } from '../../components/agregar-calificacion/agregar-calificacion';
-
-interface Registro {
-  matricula: string;
-  nombre: string;
-  corte1: string;
-  corte2: string;
-  corte3: string;
-}
+import { Component } from '@angular/core';
+import { Calificacion } from '../../components/calificacion/calificacion';
 
 @Component({
   selector: 'app-calificaciones',
-  imports: [AgregarCalificacion],
+  imports: [Calificacion],
   templateUrl: './calificaciones.html',
   styleUrl: './calificaciones.scss',
 })
 
 export class Calificaciones {
-  protected readonly title = signal('examen');
-
-  @Input() registros: Registro[] = []
-
-  addRegistro(registro: Registro) { this.registros.push(registro) }
-
-  delete(registro: Registro) {
-    this.registros = this.registros.filter(r => r !== registro) 
-  }
-
+  
 }
