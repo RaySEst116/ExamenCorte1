@@ -20,8 +20,8 @@ interface Registro {
 })
 export class AgregarCalificacion {
   formularioCalif: FormGroup;
-  @Output() registro = new EventEmitter<Registro>()
 
+  @Output() registro = new EventEmitter<Registro>()
 
   modoEdicion: boolean = false;
 
@@ -29,8 +29,8 @@ export class AgregarCalificacion {
     this.formularioCalif = this.fb.group({
       matricula: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       nombre: ['', [Validators.required, Validators.pattern("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$")]],
-      corte1: [''],
-      corte2: [''],
+      corte1: ['', [Validators.pattern("/^(10|[0-9])$/")]],
+      corte2: ['', [Validators.pattern("/^(10|[0-9])$/")]],
       corte3: ['']
     });
   }

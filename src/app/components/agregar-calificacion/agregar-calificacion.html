@@ -24,15 +24,24 @@
         </p>
         <p>
             Corte 1:
-            <input type="number" formControlName="corte1">
+            <input type="number" formControlName="corte1"> <br>
+            @if (this.formularioCalif.get('corte1')?.errors?.['pattern'] && this.formularioCalif.touched) {
+                <span style="color: red;"> *Ingrese una calif. valida</span>
+            }
         </p>
         <p>
             Corte 2:
-            <input type="number" formControlName="corte2">
+            <input type="number" formControlName="corte2"><br>
+            @if (this.formularioCalif.get('corte2')?.errors?.['pattern'] && this.formularioCalif.touched) {
+                <span style="color: red;"> *Ingrese una calif. valida</span>
+            }
         </p>
         <p>
             Corte 3:
-            <input type="number" formControlName="corte3">
+            <input type="number" formControlName="corte3"><br>
+            @if (this.formularioCalif.get('corte3')?.errors?.['pattern'] && this.formularioCalif.touched) {
+                <span style="color: red;"> *Ingrese una calif. valida</span>
+            }
         </p>
 
         <button type="button" (click)="resetForm()">Nuevo</button>

@@ -19,7 +19,13 @@ interface Registro {
 export class Calificaciones {
   protected readonly title = signal('examen');
 
-  @Input() registros: Registro[] = []
+  @Input() registros: Registro[] = [
+    {matricula: "2023020323", nombre: "Alfonso Ramos", corte1: "5", corte2: "7", corte3: "6"},
+    {matricula: "2023020322", nombre: "Ray Ramos", corte1: "10", corte2: "10", corte3: "10"},
+    {matricula: "2023020321", nombre: "Angel Ramos", corte1: "0", corte2: "7", corte3: "6"},
+
+]
+
   @ViewChild(AgregarCalificacion) agregarCalificacionComponent!: AgregarCalificacion;
   registroSeleccionado: Registro | null = null;
   indiceEdicion: number = -1;
